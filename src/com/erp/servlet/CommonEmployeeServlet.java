@@ -1,6 +1,7 @@
 package com.erp.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.erp.pojo.Customer;
 import com.erp.pojo.Employee;
@@ -33,14 +35,35 @@ public class CommonEmployeeServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("do get method entered");
+		HttpSession session=request.getSession();
+		employeedaoimpl edi = new employeedaoimpl();
+		String action=request.getParameter("action");
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		if(action!=null && action.equalsIgnoreCase("ViewEmployee"))
+		{
+		System.out.println("inside view employee");
+		
+		
+	}
+		else {
+			System.out.println("inside heck employee");
+			List<Employee> elist=edi.getAllEmployeer();
+			if(elist!=null)
+			{
+				request.setAttribute("elist",elist);
+				response.sendRedirect("Listemployee.jsp");
+			}
+		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("welcome to servlet");
+		HttpSession session=request.getSession();
+
 		// TODO Auto-generated method stub
 		Employee e=new Employee();
 		employeedaoimpl edi=new employeedaoimpl();
@@ -79,7 +102,7 @@ public class CommonEmployeeServlet extends HttpServlet {
 			{
 				System.out.println("employee added successfully");
 				request.setAttribute("AddCustomersuccess","customer added successfully");
-				RequestDispatcher rd= request.getRequestDispatcher("/AddEmployee.jsp");
+				RequestDispatcher rd= request.getRequestDispatcher("/Listemployee.jsp");
 				rd.forward(request, response);
 			}
 			else
@@ -91,7 +114,7 @@ public class CommonEmployeeServlet extends HttpServlet {
 				rd.forward(request, response);
 			}
 		}
-
+		
 	}
 
 }
