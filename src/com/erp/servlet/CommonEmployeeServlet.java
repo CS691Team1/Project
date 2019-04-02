@@ -40,21 +40,53 @@ public class CommonEmployeeServlet extends HttpServlet {
 		employeedaoimpl edi = new employeedaoimpl();
 		String action=request.getParameter("action");
 		// TODO Auto-generated method stub
-		if(action!=null && action.equalsIgnoreCase("ViewEmployee"))
+		
+			
+	if(action!=null&&action.equalsIgnoreCase("edit"))
+	{
+		String id=request.getParameter("custid");
+		Employee e=edi.getById(id);
+		if(e!=null)
 		{
-		System.out.println("inside view employee");
-		
-		
-	}
-		else {
-			System.out.println("inside heck employee");
-			List<Employee> elist=edi.getAllEmployeer();
-			if(elist!=null)
-			{
-				request.setAttribute("elist",elist);
-				response.sendRedirect("Listemployee.jsp");
-			}
+			session.setAttribute("cust",e);
+			System.out.println("checking");
+			response.sendRedirect("UpdateEmployee.jsp");			
+
 		}
+		else
+		{
+			request.setAttribute("editcustomerfailure","false");
+			RequestDispatcher rd= request.getRequestDispatcher("/ListEmployee.jsp");
+			rd.forward(request, response);
+		}
+	}
+	else if(action!=null&&action.equalsIgnoreCase("delete"))
+	{
+		String custid=request.getParameter("custid");
+		Boolean b=edi.deleteEmployee(custid);
+		if(b==true)
+		{
+			System.out.println("deleted");
+			response.sendRedirect("CommonEmployeeServlet");
+		}
+		else
+		{
+			request.setAttribute("deletecustomerfailure","false");
+			RequestDispatcher rd= request.getRequestDispatcher("/ListEmployee.jsp");
+			rd.forward(request, response);
+		}
+	}
+	else {
+		System.out.println("inside heck employee");
+		{
+			List<Employee> custlist=edi.getAllEmployeer();
+			if(custlist!=null)
+			{
+				session.setAttribute("custlist",custlist);
+				response.sendRedirect("ListEmployee.jsp");
+			}
+			}
+	}
 	}
 
 	/**
@@ -101,9 +133,8 @@ public class CommonEmployeeServlet extends HttpServlet {
 			if(b==true)
 			{
 				System.out.println("employee added successfully");
-				request.setAttribute("AddCustomersuccess","customer added successfully");
-				RequestDispatcher rd= request.getRequestDispatcher("/Listemployee.jsp");
-				rd.forward(request, response);
+				response.sendRedirect("CommonEmployeeServlet");
+				
 			}
 			else
 			{
@@ -111,6 +142,45 @@ public class CommonEmployeeServlet extends HttpServlet {
 
 				request.setAttribute("AddCustomerfailure","customer was not added");
 				RequestDispatcher rd= request.getRequestDispatcher("/Login.jsp");
+				rd.forward(request, response);
+			}
+		}
+		else if(action!=null && action.equalsIgnoreCase("UpdateEmployee"))
+		{
+			
+			String eid=request.getParameter("EmployeeID");
+			String efname=request.getParameter("Efname");
+			String elname=request.getParameter("Elname");
+			String edepartment=request.getParameter("Edepartment");
+			String ejobposition=request.getParameter("EJobPosition");
+			Integer eWorkingHours=Integer.parseInt(request.getParameter("EWorkingHours"));
+			long econtact=Integer.parseInt(request.getParameter("Employeecontact"));
+			String email=request.getParameter("Employeeemail");
+			e.setEeid(eid);
+			e.setEfname(efname);
+			e.setElname(elname);
+			e.seteDepartment(edepartment);
+			e.seteJobPositon(ejobposition);
+			e.seteWorkingHours(eWorkingHours);
+			e.setEcustcontact(econtact);
+			e.setEemail(email);
+			
+			boolean b=edi.updateEmployee(e);
+			if(b==true)
+			{
+				List<Employee> custlist=edi.getAllEmployeer();
+				if(custlist!=null)
+				{
+					session.setAttribute("custlist",custlist);
+					response.sendRedirect("ListEmployee.jsp");
+				}
+				
+			}
+		
+			else
+			{
+				request.setAttribute("UpdateCustomerfailure","false");
+				RequestDispatcher rd= request.getRequestDispatcher("/UpdateEmployee.jsp");
 				rd.forward(request, response);
 			}
 		}

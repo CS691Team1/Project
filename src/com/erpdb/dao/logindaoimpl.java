@@ -60,7 +60,7 @@ public class logindaoimpl implements logindao {
 			rs=ptmt.executeQuery();
 			while(rs.next())
 			{
-				if(username.equals(rs.getString("custusername"))&&userpassword.equals(rs.getString("custpassword")))
+				if(username.equals(rs.getString("Custusername"))&&userpassword.equals(rs.getString("Custpassword")))
 					System.out.println("test");	
 					return true;
 						

@@ -92,11 +92,13 @@ function myFunction() {
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Comfortaa|Montserrat+Alternates|ZCOOL+XiaoWei" rel="stylesheet">
-<link rel="stylesheet" href="homepage/design.css" type="text/css">
-
-<div class="topnav" id="myTopnav">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<!-- <div class="topnav" id="myTopnav">
   <a href="Home.jsp" class="active">HOME</a> 
   <span style="margin-left:0px;color:white">|</span>
 
@@ -111,17 +113,17 @@ function myFunction() {
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
-</div>
+</div> -->
 </head>
 <body>
-<div class="container">
+<%-- <div class="container">
   <img src="Images/homebackground.jpg" alt="Snow" style="width:100%;height:500px;;">
   <div class="centered3">
 <%String adminlogin=(String)request.getAttribute("AddCustomersuccess"); %>
 <%String customerlogin=(String)request.getAttribute("AddCustomerfailure"); %>
 <form action="CommonCustomerServlet" method="post" onsubmit="return check()">
 <input type="hidden" name="action" value="AddCustomer">
-<table  align="center" cellpadding="5" cellspacing="2">
+<table align="center" cellpadding="5" cellspacing="2">
 <caption>Customer Details</caption>
 <span id="custfnameerror" style="color:red">
 <span id="custlnameerror" style="color:red"></span>
@@ -143,6 +145,110 @@ function myFunction() {
 <tr><td align="center"><input class="signupbutton" type="submit" value="Submit"></td><td align="center"><input class="resetbutton" type="reset" value="Clear"></td></tr>
 </table>
 </form>
+</div>
+</div> --%>
+<nav class="navbar navbar-dark navbar-expand-sm sticky-top w-100" style="background-color:black">
+    <div class="container-fluid">
+      <div class="some">
+          <a href="#"  class="navbar-brand d-none d-xl-none"><i class="fas fa-user-circle fa-lg"></i>
+            Bhushan Shukrachary Navgire</a>
+          <a href="#"  class="navbar-brand d-sm-none">ERP Solution</a>
+      </div>
+      
+      <button class="navbar-toggler" style="background-color:black;" type="button" data-toggle="collapse" data-target=".navbar-collapse" 
+      aria-controls="myTogglerNav" aria-expanded="true" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse  navbar-collapse  justify-content-center justify-content-xl-center" id="myTogglerNav">
+        <div class="navbar-nav"  style="letter-spacing:1px;font-family:'Montserrat',sans-serif;font-size: 13px;">
+          <li><a class="nav-item nav-link text-white" href='#'>Login</a></li>
+          <li><a class="nav-item nav-link text-white" href='#skills'>Login</a></li>
+          <li><a class="nav-item nav-link text-white" href="#education">Dashboard</a></li>
+          <li><a class="nav-item nav-link text-white" href="#Achievements"></a></li>
+          <li><a class="nav-item nav-link text-white" href="#projects">Projects</a></li>
+          <li><a class="nav-item nav-link text-white" href="#contact">Contact</a></li>
+        </div>
+      </div>
+    </div>
+  </nav> 
+<div class="container-fluid" style="background-color:#F2F3F4;height:100vh">
+
+<div class="row" style="height:100vh;font-family:'Raleway', sans-serif;">
+<div class="col">
+<div class="row justify-content-center mt-5 h4">
+<i class="fas fa-user-plus fa-3x text-dark"></i>
+
+</div>
+<form action="CommonCustomerServlet" class="row h-100" style="background-color:#F2F3F4;" method="post">
+<input type="hidden" name="action" value="AddCustomer">
+<div class="col-12 mt-3">
+	<div class="row justify-content-center">
+		<div class="form-group col-10 offset-0 col-xl-3 offset-xl-0">
+    		<label for="CustomerfName">First Name</label>
+    		<input type="text" class="form-control shadow border-0" style="border-radius:12px;" id="CustomerfName" name="CustomerfName" placeholder="Enter First Name">
+  		</div>
+    	<div class="form-group col-10 offset-0 col-xl-3">
+    		<label for="CustomerlName">Last Name</label>
+    		<input type="text" class="form-control shadow border-0" style="border-radius:12px;" id="CustomerlName" name="CustomerlName" placeholder="Enter Last Name">
+    	</div>
+    	<div class="form-group col-10 offset-0 col-xl-3 offset-xl-0">
+    		<label for="CustomerUsername">Username</label>
+    		<input type="text" class="form-control shadow border-0" style="border-radius:12px;" id="CustomerUsername" name="CustomerUsername" placeholder="Enter Username">
+  		</div>
+   	</div>
+   	<div class="row justify-content-center">
+	    <div class="form-group col-10 offset-0 col-xl-3">
+    		<label for="CustomerPassword">Password</label>
+    		<input type="password" class="form-control shadow border-0" style="border-radius:12px;" id="CustomerPassword" name="CustomerPassword" placeholder="Enter Password">
+   		 </div>
+    	<div class="form-group col-10 offset-0 col-xl-3 offset-xl-0">
+    		<label for="CustomerContact">Contact Number</label>
+    		<input type="text" class="form-control shadow border-0" style="border-radius:12px;" id="CustomerContact" name="CustomerContact" placeholder="Enter Contact Number">
+  		</div>
+    	<div class="form-group col-10 offset-0 col-xl-3">
+    		<label for="CustomerEmail">Email</label>
+    		<input type="email" class="form-control shadow border-0" style="border-radius:12px;" id="CustomerEmail" aria-describedby="emailHelp" name="CustomerEmail" placeholder="Enter Email ID">
+   		</div>
+   </div>
+   <div class="row justify-content-center">
+		<div class="form-group col-10 offset-0 col-xl-3 offset-xl-0">
+    		<label for="CustStreet">Street Address</label>
+    		<input type="text" class="form-control shadow border-0" style="border-radius:12px;" id="CustStreet" name="CustStreet"  placeholder="Enter Street Address">
+  		</div>
+   		<div class="form-group col-10 offset-0 col-xl-3">
+    		<label for="CustApt">Apartment</label>
+    		<input type="text" class="form-control shadow border-0" style="border-radius:12px;" id="CustApt" name="CustApt" placeholder="Enter Apartment No.">
+    	</div>
+    	<div class="form-group col-10 offset-0 col-xl-3 offset-xl-0">
+    		<label for="CustZip">Zip Code</label>
+    		<input type="text" class="form-control shadow border-0" style="border-radius:12px;" id="CustZip" name="CustZip" placeholder="Enter Zip Code">
+  		</div>
+   </div>
+   <div class="row justify-content-center ">
+		<div class="form-group col-10 offset-0 col-xl-3">
+    		<label for="CustCiy">City</label>
+    		<input type="text" class="form-control shadow rounded-4 border-0" style="border-radius:12px;" id="CustCiy" name="CustCity" placeholder="Enter City">
+   		</div>
+   		<div class="form-group col-10 offset-0 col-xl-3">
+    		<label for="CustState">State</label>
+    		<input type="text" class="form-control shadow rounded-4 border-0" style="border-radius:12px;" id="CustState" name="CustState" placeholder="Enter City">
+   		</div>
+   		<div class="form-group col-10 offset-0 col-xl-3">
+    		<label for="CustCoutnry">Country</label>
+    		<input type="text" class="form-control shadow rounded-4 border-0" style="border-radius:12px;" id="CustCoutnry" name="CustCoutnry" placeholder="Enter City">
+   		</div>
+   </div>
+   <div class="row justify-content-center mt-3" >
+		<div class="form-group justify-content-center row">
+    		<button class="btn btn-dark" value="Submit" style="border-radius:15px;">Submit</button>
+   		</div>
+       
+	  
+  </div>
+ </div>  
+</form>
+</div>
 </div>
 </div>
 

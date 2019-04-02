@@ -56,12 +56,17 @@ public class employeedaoimpl implements employeedao{
 	public boolean updateEmployee(Employee e) {
 		try {
 			con=DBUtility.getConnection();
-			sql="update Employee set efname=?,ecustaddress=?,ecustcontact=? where eid=? ";
+			sql="update Employee set efname=?,elname=?,eDepartment=?,eJobPosition=?,eWorkingHours=?,ecustcontact=?,eemail=? where eid=? ";
 			PreparedStatement ptmt=con.prepareStatement(sql);
 			ptmt.setString(1,e.getEfname());
-			ptmt.setString(2, e.getEcustaddress());
-			ptmt.setLong(3, e.getEcustcontact());
-			ptmt.setString(4, e.getEeid());
+			ptmt.setString(2,e.getElname());
+			ptmt.setString(3,e.geteDepartment());
+			ptmt.setString(4, e.geteJobPositon());
+			ptmt.setInt(5, e.geteWorkingHours());
+			ptmt.setLong(6, e.getEcustcontact());
+			ptmt.setString(7, e.getEemail());
+			ptmt.setString(8, e.getEeid());
+
 			int i=ptmt.executeUpdate();
 			if(i>0)
 			{
@@ -79,14 +84,14 @@ public class employeedaoimpl implements employeedao{
 	}
 
 	@Override
-	public boolean deleteEmployee(int custid) {
+	public boolean deleteEmployee(String custid) {
 		try {
 			con=DBUtility.getConnection();
-			sql="delete from Customer where custid=? ";
+			sql="delete from Employee where eid=? ";
 			PreparedStatement ptmt;
 			
 				ptmt = con.prepareStatement(sql);
-				ptmt.setInt(1,custid);
+				ptmt.setString(1,custid);
 			int i=ptmt.executeUpdate();
 			if(i>0)
 			{
@@ -105,7 +110,7 @@ public class employeedaoimpl implements employeedao{
 	}
 
 	@Override
-	public Employee getById(int custid) {
+	public Employee getById(String custid) {
 		
 			Employee c=new Employee();
 			ResultSet rs;
@@ -114,14 +119,19 @@ public class employeedaoimpl implements employeedao{
 		sql="select * from Employee where eid=? ";
 		PreparedStatement ptmt;
 		ptmt = con.prepareStatement(sql);
-		ptmt.setInt(1,custid);
+		ptmt.setString(1,custid);
 		rs=ptmt.executeQuery();
 		while(rs.next())
 		{// TODO Auto-generated method stub
 			c.setEeid(rs.getString("eid"));
 			c.setEfname(rs.getString("efname"));
-			c.setEcustaddress(rs.getString("ecustaddress"));
+			c.setElname(rs.getString("elname"));
+			c.seteDepartment(rs.getString("eDepartment"));
+			c.seteJobPositon(rs.getString("eJobPosition"));
+			c.seteWorkingHours(rs.getInt("eWorkingHours"));
 			c.setEcustcontact(rs.getLong("ecustcontact"));
+			c.setEemail(rs.getString("eemail"));
+
 			return c;
 		}
 		
@@ -183,8 +193,13 @@ public class employeedaoimpl implements employeedao{
 			Employee c=new Employee();
 				c.setEeid(rs.getString("eid"));
 				c.setEfname(rs.getString("efname"));
-				c.setEcustaddress(rs.getString("ecustaddress"));
+				c.setElname(rs.getString("elname"));
+				c.seteJobPositon(rs.getString("eJobPosition"));
+				c.seteDepartment(rs.getString("eDepartment"));
+				c.seteWorkingHours(rs.getInt("eWorkingHours"));
 				c.setEcustcontact(rs.getLong("ecustcontact"));
+				c.setEemail(rs.getString("eemail"));
+				
 				lc.add(c);
 			}
 		}catch (SQLException e) {

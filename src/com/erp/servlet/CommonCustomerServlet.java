@@ -50,17 +50,26 @@ public class CommonCustomerServlet extends HttpServlet {
 			String custfname=request.getParameter("CustomerfName");
 			String custlname=request.getParameter("CustomerlName");
 			String custusername=request.getParameter("CustomerUsername");
-			String custaddress=request.getParameter("CustomerAddress");
-			long custcontact=Long.parseLong(request.getParameter("CustomerContact"));
 			String custpassword=request.getParameter("CustomerPassword");
+			long custcontact=Long.parseLong(request.getParameter("CustomerContact"));
 			String custemail=request.getParameter("CustomerEmail");
+			String custstreet=request.getParameter("CustStreet");
+			String custapt=request.getParameter("CustApt");
+			String custzip=request.getParameter("CustZip");
+			String custstate=request.getParameter("CustState");
+			String custcountry=request.getParameter("CustCoutnry");
+
 			c.setCustfname(custfname);
 			c.setCustlname(custlname);
 			c.setCustusername(custusername);
 			c.setPassword(custpassword);
-			c.setCustaddress(custaddress);
 			c.setCustcontact(custcontact);
 			c.setEmail(custemail);
+			c.setCuststreet(custstreet);
+			c.setCustapt(custapt);
+			c.setCustzipcode(custzip);
+			c.setState(custstate);
+			c.setCustcountry(custcountry);
 			
 			boolean b=cdi.addCustomer(c);
 			if(b==true)
@@ -70,7 +79,7 @@ public class CommonCustomerServlet extends HttpServlet {
 				rd.forward(request, response);
 			}
 			else
-			{
+			{	System.out.println("something went wrong with loginn");
 				request.setAttribute("AddCustomerfailure","customer was not added");
 				RequestDispatcher rd= request.getRequestDispatcher("/Login.jsp");
 				rd.forward(request, response);

@@ -1,15 +1,22 @@
 package com.erp.pojo;
 
-import java.util.Date;
 
 public class Customer {
 
-	public int getCustid() {
-		return custid;
-	}
-	public void setCustid(int custid) {
-		this.custid = custid;
-	}
+	
+	private String custfname;
+	private String custlname;
+	private String custusername;
+	private String password;
+	private String custstreet;
+	private String custapt;
+	private String custcity;
+	private String custzipcode;
+	private long custcontact;
+	private String email;
+	private String custcountry;
+	private String state;
+	
 	public String getCustfname() {
 		return custfname;
 	}
@@ -34,11 +41,29 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getCustaddress() {
-		return custaddress;
+	public String getCuststreet() {
+		return custstreet;
 	}
-	public void setCustaddress(String custaddress) {
-		this.custaddress = custaddress;
+	public void setCuststreet(String custstreet) {
+		this.custstreet = custstreet;
+	}
+	public String getCustapt() {
+		return custapt;
+	}
+	public void setCustapt(String custapt) {
+		this.custapt = custapt;
+	}
+	public String getCustcity() {
+		return custcity;
+	}
+	public void setCustcity(String custcity) {
+		this.custcity = custcity;
+	}
+	public String getCustzipcode() {
+		return custzipcode;
+	}
+	public void setCustzipcode(String custzipcode) {
+		this.custzipcode = custzipcode;
 	}
 	public long getCustcontact() {
 		return custcontact;
@@ -52,18 +77,24 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	private int custid;
+	public String getCustcountry() {
+		return custcountry;
+	}
+	public void setCustcountry(String custcountry) {
+		this.custcountry = custcountry;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
 	@Override
 	public String toString() {
-		return "Customer [custid=" + custid + ", custfname=" + custfname + ", custlname=" + custlname
-				+ ", custusername=" + custusername + ", password=" + password + ", custaddress=" + custaddress
-				+ ", custcontact=" + custcontact + ", email=" + email + "]";
+		return "Customer [custfname=" + custfname + ", custlname=" + custlname + ", custusername=" + custusername
+				+ ", password=" + password + ", custstreet=" + custstreet + ", custapt=" + custapt + ", custcity="
+				+ custcity + ", custzipcode=" + custzipcode + ", custcontact=" + custcontact + ", email=" + email
+				+ ", custcountry=" + custcountry + ", state=" + state + "]";
 	}
-	private String custfname;
-	private String custlname;
-	private String custusername;
-	private String password;
-	private String custaddress;
-	private long custcontact;
-	private String email;
+	
 }

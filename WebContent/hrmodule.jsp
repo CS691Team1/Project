@@ -48,12 +48,12 @@
             </div></a>
 
 
-            <div class="hrcard">
+           <a href="CommonEmployeeServlet"> <div class="hrcard">
                 <img src="Images/leave.jpg" alt="Avatar" style="width:100%">
                 <div class="hrbox">
-                <h4><b>Leaves</b></h4> 
+                <h4><b>View Employtee</b></h4> 
                 </div>
-            </div>
+            </div></a>
 
             <div class="hrcard">
                 <img src="Images/attendance.jpg" alt="Avatar" style="width:100%">

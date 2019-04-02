@@ -45,37 +45,18 @@ public class CommonLoginServlet extends HttpServlet {
 HttpSession session=request.getSession();
 String action=request.getParameter("action");
 String role=request.getParameter("type");
-String password=request.getParameter("password");
-String username=request.getParameter("name");
-String adminpassword=request.getParameter("password");
-String adminusername=request.getParameter("name");
+String password=request.getParameter("Custpassword");
+String username=request.getParameter("Custusername");
+String adminpassword=request.getParameter("Custpassword");
+String adminusername=request.getParameter("Custusername");
 
 Cookie c=new Cookie("Username",username);
 response.addCookie(c);
 if(action!=null&&action.equalsIgnoreCase("login"))
 {
-if(role.equalsIgnoreCase("customer"))
-{
+	System.out.println(username+password);
 	boolean b=ldimpl.userlogin(username, password);
-			if(b==true)
-			{
-				session.setAttribute("customer",username);
-				session.setAttribute("type",role);
-				
-				request.setAttribute("customerlogin","you have successfully logged in");	
-				RequestDispatcher rd=request.getRequestDispatcher("Dashboard.jsp");
-				rd.forward(request, response);
-			}
-			else
-			{
-				request.setAttribute("customerlogin","Plz enter valid user credentials");
-				RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
-				rd.forward(request, response);
-			}
-}
-else if(role.equalsIgnoreCase("admin"))
-{
-	boolean b=ldimpl.adminlogin(adminusername, adminpassword);
+	System.out.println(b);
 	
 			if(b==true)
 			{
@@ -94,8 +75,11 @@ else if(role.equalsIgnoreCase("admin"))
 				rd.forward(request, response);
 			}
 }
+else {
+	System.out.println("fuck you");
+}
 }
 
 	}
 
-}
+

@@ -105,68 +105,12 @@ function check()
 }
 </script>
 <body>
-<form action="CommonEmployeeServlet" method="post">
+<form action="CommonEmployeeServlet" method="post" style="margin-left:40%">
 <input type="hidden" name="action" value="AddEmployee">
 
 	<div class="grid-container">
          <div class="form">
-      <!--           <table>
-                    <th>Personal info</th>
-                    <tr>
-                    <td><label>First Name</label></td>
-                    <td><input type="text" name="firstname" placeholder="John"></td>
-                    </tr>
-                    <tr>
-                    <td><label>Last Name</label></td>
-                    <td><input type="text" name="lastname" placeholder="Doe"></td>
-                    </tr>
-                    <tr>
-                    <td><label>Date Of Birth</label></td>
-                    <td><input type="text" name="dob" placeholder="11/6/1995"></td>
-                    </tr>
-                    <tr>
-                    <td><label>Email</label></td>
-                    <td><input type="email" name="email" placeholder="johndoe@gmail.com"></td>
-                    </tr>
-                    <tr>
-                    <td><label>Contact No</label></td>
-                    <td><input type="tel" name="number" placeholder="+12015648965"></td>
-                    </tr>
-                    <tr>
-                    <td><label>Address</label></td>
-                    <td><input type="text" name="address1" placeholder="225 Academy street"></td>
-                    </tr>
-                    <tr>
-                    <td></td>
-                    <td><input type="text" name="address2" placeholder="Jersey City, NJ07306"></td>
-                    </tr>
-                </table>
-                </div>
-                <div class="form">
-                        <table>
-                                <th class-"addemployeeth">Employee Position</th>
-                                <tr>
-                                <td><label>Department</label></td>
-                                <td><input type="text" name="department" placeholder="Banking"></td>
-                                </tr>
-                                <tr>
-                                <td><label>Job Position</label></td>
-                                <td><input type="text" name="job-position" placeholder="Manager"></td>
-                                </tr>
-                                <tr>
-                                <td><label>Job Title</label></td>
-                                <td><input type="text" name="job-title" placeholder="Senior Incharge"></td>
-                                </tr>
-                                <tr>
-                                <td><label>Reporting Officer</label></td>
-                                <td><input type="text" name="reporting-officer" placeholder="Mr.Smith"></td>
-                                </tr>
-                                <tr>
-                                <td><label>Working Hours</label></td>
-                                <td><input type="number" name="number" placeholder="45"></td>
-                                </tr>
-                                <tr><input type="submit"></tr>
-                            </table> -->
+      
                             <table  align="center" cellpadding="5" cellspacing="2">
 <caption>Customer Details</caption>
 <span id="custfnameerror" style="color:red">
@@ -185,17 +129,15 @@ function check()
 <tr><td>JobPosition</td><td><input class="page3text" type="text" name="EJobPosition" id="EJobPosition"/></td><td></td></tr>
 <tr><td>JobTitle</td><td><input class="page3text" type="text" name="EJobTitle" id="EJobTitle"/></td><td></td></tr>
 <tr><td>Reporting Officer</td><td><input class="page3text" type="text" name="EReportingOfficer" id="EReportingOfficer"/></td><td></td></tr>
-
 <tr><td>Working Hours</td><td><input class="page3text" type="text" name="EWorkingHours" id="EWorkingHours"/></td><td></td></tr>
-
 <tr><td> Address</td><td><textarea class="page3text" name="EmployeeAddress" rows="4"cols="0" id="EmployeeAddress"></textarea></td><td></td></tr>
 <tr><td> Contact No.</td><td><input class="page3text" type="text" name="Employeecontact" id="Employeecontact"/></td><td></td></tr>
 <tr><td> Email</td><td><input class="page3text" type="text" name="Employeeemail" id="Employeeemail"/></td><td></td></tr>
 <tr><td align="center"><input class="signupbutton" type="submit" value="Submit"></td><td align="center"><input class="resetbutton" type="reset" value="Clear"></td></tr>
 </table>
-                </div>
-            </div>
-            </form>
+</div>
+</div>
+</form>
             </div>
             </div>
 </body>
