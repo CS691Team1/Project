@@ -75,6 +75,14 @@
     		<div class="col-6"><input type="text" class="form-control " id="itemminquantity" name="itemminquantity"></div>
   		 </div>
   		 <div class="form-group row mx-2  justify-content-center">
+    		<div class="col-4 offset-1 align-self-center text-right"><label class="my-auto" for="itemsperday">Purchase Price</label></div>
+    		<div class="col-6"><input type="text" class="form-control" id="itemspurchaseprice" name="itemspurchaseprice"></div>
+  		 </div>
+  		 <div class="form-group row mx-2  justify-content-center">
+    		<div class="col-4 offset-1 align-self-center text-right"><label class="my-auto" for="itemsperday">Sale Price</label></div>
+    		<div class="col-6"><input type="text" class="form-control" id="itemssaleprice" name="itemssaleprice"></div>
+  		 </div>
+  		 <div class="form-group row mx-2  justify-content-center">
     		<div class="col-4 offset-1 align-self-center text-right"><label class="my-auto" for="itemsperday">Per Day Use</label></div>
     		<div class="col-6"><input type="text" class="form-control" id="itemsperday" name="itemsperday"></div>
   		 </div>
@@ -99,7 +107,7 @@
 System.out.println(itemlist);
 System.out.println("checking values");
 System.out.println(request.getAttributeNames());%>
-<table class="display-none" align="center"  cellpadding="10" cellspacing="0" style="width:80%">
+<table class="display-none" align="center"  cellpadding="10" cellspacing="0" style="width:90%">
 <col width="100"><col width="120"><col width="150"><col width="150">
 <tr style="background-color:#17202A;color:white">
 <td class="text-center">Item ID</td>
@@ -107,7 +115,9 @@ System.out.println(request.getAttributeNames());%>
 <td class="text-center">Item Quantity</td>
 <td class="text-center">Shipment Date</td>
 <td class="text-center">Minimum Quantity</td>
-<td class="text-center">Per-Day-Use</td>
+<td class="text-center">Per-Day-Sale</td>
+<td class="text-center">Purchase Price</td>
+<td class="text-center">Sale Price</td>
 <td class="bg-danger text-center" colspan=2>Manage</td></tr>
 </tr>
 <% for(int i=0;i<itemlist.size();i++)
@@ -121,7 +131,10 @@ System.out.println(request.getAttributeNames());%>
 	    <td class="text-center"><%=item.getItemquantity()%></td>
 	    <td class="text-center"><%=item.getItemshipment()%></td>
 	    <td class="text-center"><%=item.getMinitemquantity()%></td>
-	    <td class="text-center"><%=item.getPerdayuse()%></td>
+	    <td class ="text-center"><%=item.getPerdaysale()%></td>
+	    <td class ="text-center"><%=item.getPurchaseprice()%></td>
+	    <td class ="text-center"><%=item.getSaleprice()%></td>
+	    
 	    <td class="text-center"><a href="CommonInventoryservlet?action=update&itemid=<%=item.getItemid()%>">Edit</a></td>
 		<td class="text-center"><a href="CommonInventoryservlet?action=delete&itemid=<%=item.getItemid()%>">Delete</a></td>
 	    
@@ -147,8 +160,12 @@ Inventoryitem item=itemlist.get(i);
     <h6 class="card-subtitle mb-2 text-muted d-inline"><%=item.getItemshipment()%></h6><br/>
     <h6 class="card-title d-inline">Min Quanitity:</h6>
     <h6 class="card-subtitle mb-2 text-muted d-inline"><%=item.getMinitemquantity()%></h6><br/>
-    <h6 class="card-title d-inline">Per Day Use:</h6>
-    <h6 class="card-subtitle mb-2 text-muted d-inline"><%=item.getPerdayuse()%></h6><br/>
+    <h6 class="card-title d-inline">Per Day Sale:</h6>
+    <h6 class="card-subtitle mb-2 text-muted d-inline"><%=item.getPerdaysale()%></h6><br/>
+    <h6 class="card-title d-inline">Purchase price:</h6>
+    <h6 class="card-subtitle mb-2 text-muted d-inline"><%=item.getPurchaseprice()%></h6><br/>
+    <h6 class="card-title d-inline">Sale price:</h6>
+    <h6 class="card-subtitle mb-2 text-muted d-inline"><%=item.getSaleprice()%></h6><br/>
    
     <div class="mt-2">
     <a class="card-link" href= "CommonInventoryservlet?action=update&itemid=<%=item.getItemid()%>">Edit</a>

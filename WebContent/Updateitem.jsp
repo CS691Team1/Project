@@ -82,7 +82,15 @@ function myFunction() {
   		 </div>
   		 <div class="row my-2 my-xl-2 justify-content-center mainn">
     		<div class="col-12  col-xl-2  my-auto text-xl-right"><label class="my-auto" for="itemsperday">Per Day Use</label></div>
-    		<div class="col-12 col-xl-4 offset-xl-0 w-100"><input type="text" class="form-control form-control-lg" id="itemsperday" name="itemsperday" value="<%=e.getPerdayuse()%>"></div>
+    		<div class="col-12 col-xl-4 offset-xl-0 w-100"><input type="text" class="form-control form-control-lg" id="itemsperday" name="itemsperday" value="<%=e.getPerdaysale()%>"></div>
+  		 </div>
+  		 <div class="row my-2 my-xl-2 justify-content-center mainn">
+    		<div class="col-12  col-xl-2  my-auto text-xl-right"><label class="my-auto" for="itemsperday">Purchase Price</label></div>
+    		<div class="col-12 col-xl-4 offset-xl-0 w-100"><input type="text" class="form-control form-control-lg" id="itemspurchaseprice" name="itemspurchaseprice" value="<%=e.getPurchaseprice()%>"></div>
+  		 </div>
+  		 <div class="row my-2 my-xl-2 justify-content-center mainn">
+    		<div class="col-12  col-xl-2  my-auto text-xl-right"><label class="my-auto" for="itemsperday">Sale Price</label></div>
+    		<div class="col-12 col-xl-4 offset-xl-0 w-100"><input type="text" class="form-control form-control-lg" id="itemssaleprice" name="itemssaleprice" value="<%=e.getSaleprice()%>"></div>
   		 </div>
         <div class="row  my-3 my-xl-4 justify-content-center mainn">
         <button href="CommonInventoryservlet" class="btn btn-dark mr-3">Submit</button>

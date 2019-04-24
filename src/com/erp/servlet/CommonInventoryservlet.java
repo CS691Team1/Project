@@ -128,14 +128,18 @@ public class CommonInventoryservlet extends HttpServlet {
 			
 		    Integer itemminquantity=Integer.parseInt(request.getParameter("itemminquantity"));
 			Integer perdayuse=Integer.parseInt(request.getParameter("itemsperday"));
+			Integer purchaseprice=Integer.parseInt(request.getParameter("itemspurchaseprice"));
+			Integer saleprice=Integer.parseInt(request.getParameter("itemssaleprice"));
 			
 			i.setItemid(itemid);
 			i.setItemname(itemname);
 			i.setItemquantity(itemquantity);
 			i.setItemshipment(sqlStartDate);
 			i.setMinitemquantity(itemminquantity);
-			i.setPerdayuse(perdayuse);
-						
+			i.setPerdaysale(perdayuse);
+			i.setPurchaseprice(purchaseprice);
+			i.setSaleprice(saleprice);
+			
 			boolean b=idi.additem(i);
 			if(b==true)
 			{
@@ -170,14 +174,16 @@ public class CommonInventoryservlet extends HttpServlet {
 				
 			    Integer itemminquantity=Integer.parseInt(request.getParameter("itemminquantity"));
 				Integer perdayuse=Integer.parseInt(request.getParameter("itemsperday"));
-				
+				Integer purchaseprice=Integer.parseInt(request.getParameter("itemspurchaseprice"));
+				Integer saleprice=Integer.parseInt(request.getParameter("itemssaleprice"));
 				i.setItemid(itemid);
 				i.setItemname(itemname);
 				i.setItemquantity(itemquantity);
 				i.setItemshipment(sqlStartDate);
 				i.setMinitemquantity(itemminquantity);
-				i.setPerdayuse(perdayuse);
-			
+				i.setPerdaysale(perdayuse);
+				i.setPurchaseprice(purchaseprice);
+				i.setSaleprice(saleprice);
 			boolean b=idi.updateitem(i);
 			if(b==true)
 			{

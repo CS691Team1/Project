@@ -23,7 +23,7 @@ public class Inventorydaoimple implements Inventorydao {
 	public boolean additem(Inventoryitem item) {
 		
 						con=DBUtility.getConnection();
-				sql="insert into inventory(itemid,itemname,itemquantity,itemminquantity,itemshipment,itemperdayuse)values(?,?,?,?,?,?);";
+				sql="insert into inventory(itemid,itemname,itemquantity,itemminquantity,itemshipment,itemperdayuse,purchaseprice,saleprice)values(?,?,?,?,?,?,?,?);";
 				PreparedStatement ptmt;
 				try {
 					ptmt = con.prepareStatement(sql);
@@ -33,7 +33,9 @@ public class Inventorydaoimple implements Inventorydao {
 					ptmt.setInt(3, item.getItemquantity());
 					ptmt.setInt(4, item.getMinitemquantity());
 					ptmt.setDate(5,(java.sql.Date) item.getItemshipment());
-					ptmt.setInt(6, item.getPerdayuse());
+					ptmt.setInt(6, item.getPerdaysale());
+					ptmt.setInt(7, item.getPurchaseprice());
+					ptmt.setInt(8, item.getSaleprice());
 					
 					int i=ptmt.executeUpdate();
 					System.out.println(i);
@@ -57,14 +59,16 @@ public class Inventorydaoimple implements Inventorydao {
 	public boolean updateitem(Inventoryitem item) {
 		try {
 			con=DBUtility.getConnection();
-			sql="update inventory set itemname=?,itemquantity=?,itemminquantity=?,itemshipment=?,itemperdayuse=? where itemid=? ";
+			sql="update inventory set itemname=?,itemquantity=?,itemminquantity=?,itemshipment=?,itemperdayuse=?,purchaseprice=?,saleprice=? where itemid=? ";
 			PreparedStatement ptmt=con.prepareStatement(sql);
 			ptmt.setString(1, item.getItemname());
 			ptmt.setInt(2, item.getItemquantity());
 			ptmt.setInt(3, item.getMinitemquantity());
 			ptmt.setDate(4,(java.sql.Date) item.getItemshipment());
-			ptmt.setInt(5, item.getPerdayuse());
-			ptmt.setInt(6,item.getItemid());
+			ptmt.setInt(5, item.getPerdaysale());
+			ptmt.setInt(6, item.getPurchaseprice());
+			ptmt.setInt(7, item.getSaleprice());
+			ptmt.setInt(8,item.getItemid());
 
 			int i=ptmt.executeUpdate();
 			if(i>0)
@@ -126,10 +130,10 @@ public class Inventorydaoimple implements Inventorydao {
 		it.setItemquantity(rs.getInt("itemquantity"));
 		it.setItemshipment(rs.getDate("itemshipment"));
 		it.setMinitemquantity(rs.getInt("itemminquantity"));
-		it.setPerdayuse(rs.getInt("itemperdayuse"));;
-	
-
-		return it;
+		it.setPerdaysale(rs.getInt("itemperdayuse"));
+		it.setPurchaseprice(rs.getInt("purchaseprice"));
+		it.setSaleprice(rs.getInt("saleprice"));
+	return it;
 	}
 	
 	
@@ -159,7 +163,9 @@ public class Inventorydaoimple implements Inventorydao {
 				c.setMinitemquantity(Integer.parseInt((rs.getString("itemminquantity"))));
 				Date date1=rs.getDate("itemshipment");
 				c.setItemshipment(date1);
-				c.setPerdayuse(Integer.parseInt(rs.getString("itemperdayuse")));
+				c.setPerdaysale(Integer.parseInt(rs.getString("itemperdayuse")));
+				c.setPurchaseprice(Integer.parseInt(rs.getString("purchaseprice")));
+				c.setSaleprice(Integer.parseInt(rs.getString("saleprice")));
 				lc.add(c);
 			}
 		}catch (SQLException e) {

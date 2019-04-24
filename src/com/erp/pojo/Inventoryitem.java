@@ -5,17 +5,22 @@ import java.util.Date;
 public class Inventoryitem {
 	
 private int itemid;
+
 private String Itemname;
 private int itemquantity;
 private Date itemshipment;
 private int minitemquantity;
-private int perdayuse;
+private int purchaseprice;
+private int saleprice;
+private int perdaysale;
+
+
 
 @Override
 public String toString() {
 	return "Inventoryitem [itemid=" + itemid + ", Itemname=" + Itemname + ", itemquantity=" + itemquantity
-			+ ", itemshipment=" + itemshipment + ", minitemquantity=" + minitemquantity + ", perdayuse=" + perdayuse
-			+ "]";
+			+ ", itemshipment=" + itemshipment + ", minitemquantity=" + minitemquantity + ", purchaseprice="
+			+ purchaseprice + ", saleprice=" + saleprice + ", perdaysale=" + perdaysale + "]";
 }
 public int getItemid() {
 	return itemid;
@@ -47,12 +52,25 @@ public int getMinitemquantity() {
 public void setMinitemquantity(int minitemquantity) {
 	this.minitemquantity = minitemquantity;
 }
-public int getPerdayuse() {
-	return perdayuse;
+public int getPurchaseprice() {
+	return purchaseprice;
 }
-public void setPerdayuse(int perdayuse) {
-	this.perdayuse = perdayuse;
+public void setPurchaseprice(int purchaseprice) {
+	this.purchaseprice = purchaseprice;
 }
+public int getSaleprice() {
+	return saleprice;
+}
+public void setSaleprice(int saleprice) {
+	this.saleprice = saleprice;
+}
+public int getPerdaysale() {
+	return perdaysale;
+}
+public void setPerdaysale(int perdaysale) {
+	this.perdaysale = perdaysale;
+}
+
 
 
 
