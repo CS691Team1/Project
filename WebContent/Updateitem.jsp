@@ -41,13 +41,10 @@ function myFunction() {
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse  navbar-collapse  justify-content-center justify-content-xl-center" id="myTogglerNav">
+      <div class="collapse  navbar-collapse  justify-content-end justify-content-xl-end" id="myTogglerNav">
         <div class="navbar-nav"  style="letter-spacing:1px;font-family:'Montserrat',sans-serif;font-size: 13px;">
-          <li><a class="nav-item nav-link text-white" href='#'>Home</a></li>
-          <li><a class="nav-item nav-link text-white" href='#skills'>Skills</a></li>
-          <li><a class="nav-item nav-link text-white" href="#education">Education</a></li>
-          <li><a class="nav-item nav-link text-white" href="#Achievements">Achievements</a></li>
-          <li><a class="nav-item nav-link text-white" href="#projects">Projects</a></li>
+          <li><a class="nav-item nav-link text-white" href='Dashboard.jsp'>Dashboard</a></li>
+          <li><a class="nav-item nav-link text-white" href='#skills'>Logout</a></li>
           <li><a class="nav-item nav-link text-white" href="#contact">Contact</a></li>
         </div>
       </div>
@@ -58,7 +55,7 @@ function myFunction() {
 <div class="row">
 <div class="col-10 offset-1 col-xl-10 offset-xl-1 row justify-content-center mt-5" style="height:100vh">
 
-<form action="CommonInventoryservlet" id="myForm" class="col-12 mt-3 my-md-auto mt-xl-5"  method="post">
+<form action="CommonInventoryservlet" method="post" id="myForm" class="col-12 mt-3 my-md-auto mt-xl-5"  >
     <input type="hidden" name="action" value="Updateitem">
 
   <%Inventoryitem e=(Inventoryitem)session.getAttribute("item");
@@ -88,9 +85,9 @@ function myFunction() {
     		<div class="col-12 col-xl-4 offset-xl-0 w-100"><input type="text" class="form-control form-control-lg" id="itemsperday" name="itemsperday" value="<%=e.getPerdayuse()%>"></div>
   		 </div>
         <div class="row  my-3 my-xl-4 justify-content-center mainn">
-        <input type="text" placeholder="checking">
-        <button type="reset" value="Reset" onclick="myFunction()" class="btn btn-secondary mr-3" >Reset</button>
-        <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+        <button href="CommonInventoryservlet" class="btn btn-dark mr-3">Submit</button>
+        <a href="CommonInventoryservlet" class="btn btn-danger mr-3" >Cancel</a>
+        
       </div>
 
 </form>

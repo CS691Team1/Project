@@ -160,7 +160,7 @@ public class CommonInventoryservlet extends HttpServlet {
 		{
 			
 			try {
-				System.out.println("welcome to adding");
+				System.out.println("welcome to updating");
 				Integer itemid=Integer.parseInt(request.getParameter("itemid"));
 				String itemname=request.getParameter("itemname");
 				int itemquantity=Integer.parseInt(request.getParameter("itemquantity"));
@@ -185,6 +185,7 @@ public class CommonInventoryservlet extends HttpServlet {
 				if(itemlist!=null)
 				{
 					session.setAttribute("itemlist",itemlist);
+					System.out.println("item updated");
 					response.sendRedirect("CommonInventoryservlet");
 				}
 				

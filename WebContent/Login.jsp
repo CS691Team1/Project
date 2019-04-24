@@ -52,7 +52,7 @@ overflow-x: hidden;
   </div>
   <div class="form-group mt-3">
     <label for="Custpassword" class="text-secondary">Password</label>
-    <input type="password" style="border-radius:12px;" class="form-control shadow border-0"" id="Custpassword" name="Custpassword" placeholder="Password">
+    <input type="password" style="border-radius:12px;" class="form-control shadow border-0" id="Custpassword" name="Custpassword" placeholder="Password">
   </div>
   <div class="row justify-content-end mt-5 form-group">
    <a href="Signup.jsp"><input type="button" class="btn btn-dark shadow-lg mr-3" value="Signup" style="border-radius:15px;"></button></a>
