@@ -13,7 +13,36 @@
 <title>Insert title here</title>
 </head>
 <body style="background-color:#FDEBD0">
+<%String admin=(String)session.getAttribute("admin"); 
+String customer=(String)session.getAttribute("customer"); 
+String type=(String)session.getAttribute("role");
+System.out.println(admin+" "+customer+" "+type);%>
+<nav class="navbar navbar-dark navbar-expand-sm sticky-top w-100" style="background-color:black">
+    <div class="container-fluid">
+      <div class="some">
+          <a href="#"  class="navbar-brand d-none d-xl-none"><i class="fas fa-user-circle fa-lg"></i>
+            Enterise Resource Planning</a>
+            <%if (admin!=null){ %>
+  <div class="justify-content-center text-white">Hi, <%=admin %> welcome to dashboard</div><%} %>
+  <%if (customer!=null){ %>
+  <div class="justify-content-center text-white">Hi, <%=admin %> welcome to dashboard</div><%} %>
+          <a href="#"  class="navbar-brand d-sm-none">ERP Solution</a>
+      </div>
+      
+      <button class="navbar-toggler" style="background-color:black;" type="button" data-toggle="collapse" data-target=".navbar-collapse" 
+      aria-controls="myTogglerNav" aria-expanded="true" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse  navbar-collapse  justify-content-end justify-content-xl-end" id="myTogglerNav">
+        <div class="navbar-nav"  style="letter-spacing:1px;font-family:'Montserrat',sans-serif;font-size: 13px;">
+          <li><a class="nav-item nav-link text-white" href="#education">Dashboard</a></li>
+           <li><a class="nav-item nav-link text-white" href="CommonLoginServlet?action=logout">Logout</a></li>
+          
+        </div>
+      </div>
+    </div>
+  </nav> 
 <form action="CommonEmployeeServlet" method="post" onsubmit="return validate()">
 <%Employee e=(Employee)session.getAttribute("cust");
 System.out.println(e);%>

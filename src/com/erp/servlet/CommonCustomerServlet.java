@@ -52,17 +52,18 @@ public class CommonCustomerServlet extends HttpServlet {
 			String custusername=request.getParameter("CustomerUsername");
 			String custpassword=request.getParameter("CustomerPassword");
 			long custcontact=Long.parseLong(request.getParameter("CustomerContact"));
+			String city=request.getParameter("CustCiy");
 			String custemail=request.getParameter("CustomerEmail");
 			String custstreet=request.getParameter("CustStreet");
 			String custapt=request.getParameter("CustApt");
 			String custzip=request.getParameter("CustZip");
 			String custstate=request.getParameter("CustState");
 			String custcountry=request.getParameter("CustCoutnry");
-
 			c.setCustfname(custfname);
 			c.setCustlname(custlname);
 			c.setCustusername(custusername);
 			c.setPassword(custpassword);
+			c.setCustcity(request.getParameter("CustCity"));
 			c.setCustcontact(custcontact);
 			c.setEmail(custemail);
 			c.setCuststreet(custstreet);

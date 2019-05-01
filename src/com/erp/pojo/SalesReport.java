@@ -36,13 +36,6 @@ public class SalesReport {
 		return "SalesReport [date=" + date + ", item=" + item + ", quantity=" + quantity + ", totalItemSale="
 				+ totalItemSale + "]";
 	}
-	public SalesReport(Date date, String item, int quantity, int totalItemSale) {
-		super();
-		this.date = date;
-		this.item = item;
-		this.quantity = quantity;
-		this.totalItemSale = totalItemSale;
-	}
 	
 	
 	

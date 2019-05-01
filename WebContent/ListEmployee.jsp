@@ -13,6 +13,10 @@
 <meta charset="ISO-8859-1">
 <title>ERP</title>
 </head>
+<%String admin=(String)session.getAttribute("admin"); 
+String customer=(String)session.getAttribute("customer"); 
+String type=(String)session.getAttribute("role");
+System.out.println(admin+" "+customer+" "+type);%>
 <body style="background-color:#FDEBD0">
   <nav class="navbar navbar-dark navbar-expand-sm sticky-top w-100" style="background-color:black">
     <div class="container-fluid">
@@ -31,7 +35,7 @@
         <div class="navbar-nav"  style="letter-spacing:1px;font-family:'Montserrat',sans-serif;font-size: 13px;">
           <li><a class="nav-item nav-link text-white" href="Dashboard.jsp">Dashboard &nbsp; &nbsp;</a></li>
           <li><a class="nav-item nav-link text-white" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-plus"></i> Add Employee &nbsp; &nbsp;</a></li>
-          <li><a class="nav-item nav-link text-white" href="#education">Logout</a></li>
+           <li><a class="nav-item nav-link text-white" href="CommonLoginServlet?action=logout">Logout</a></li>
          
         </div>
       </div>
@@ -67,14 +71,19 @@
     		<div class="col-5  align-self-center text-right"><label class="my-auto" for="itemquantity">Last Name</label></div>
     		<div class="col-7"><input type="text" class="form-control" id="Elname" name="Elname" placeholder="Last Name"></div>
   		 </div>
+  		  <div class="form-group row justify-content-center">
+    		<div class="col-5  align-self-center text-right"><label class="my-auto" for="itemquantity">User Name:</label></div>
+    		<div class="col-7"><input type="text" class="form-control" id="eusername" name="eusername" placeholder="Enter Username"></div>
+  		 </div>
+  		  <div class="form-group row justify-content-center">
+    		<div class="col-5  align-self-center text-right"><label class="my-auto" for="itemquantity">Password:</label></div>
+    		<div class="col-7"><input type="password" class="form-control" id="epassword" name="epassword" placeholder="Enter Password"></div>
+  		 </div>
   		 <div class="form-group row justify-content-center">
     		<div class="col-5  align-self-center text-right"><label class="my-auto" for="itemquantity">Job Position</label></div>
     		<div class="col-7"><input type="text" class="form-control" id="EJobPosition" name="EJobPosition" placeholder="Position"></div>
   		 </div>
-  		 <div class="form-group row justify-content-center">
-    		<div class="col-5 align-self-center text-right"><label class="my-auto" for="itemquantity">Job Title</label></div>
-    		<div class="col-7"><input type="text" class="form-control" id="EJobTitle" name="EJobTitle" placeholder="Job Title"></div>
-  		 </div>
+  		 
   		 <div class="form-group row  justify-content-center">
     		<div class="col-5  align-self-center center text-right"><label class="my-auto" for="itemshipment">Date of Birth</label></div>
     		<div class="col-7"><input type="date" class="form-control" id="Edob" name="Edob"></div>

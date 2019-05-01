@@ -31,7 +31,7 @@
         <div class="navbar-nav"  style="letter-spacing:1px;font-family:'Montserrat',sans-serif;font-size: 13px;">
           <li><a class="nav-item nav-link text-white" href="Dashboard.jsp">Dashboard &nbsp; &nbsp;</a></li>
           <li><a class="nav-item nav-link text-white" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Add Item &nbsp; &nbsp;</a></li>
-          <li><a class="nav-item nav-link text-white" href="#education">Logout</a></li>
+           <li><a class="nav-item nav-link text-white" href="CommonLoginServlet?action=logout">Logout</a></li>
          
         </div>
       </div>

@@ -34,12 +34,19 @@ html, body {
 </style>
 </head>
 <body class="bg-dark">
-
+<%String admin=(String)session.getAttribute("admin"); 
+String customer=(String)session.getAttribute("customer"); 
+String type=(String)session.getAttribute("role");
+System.out.println(admin+" "+customer+" "+type);%>
   <nav class="navbar navbar-dark navbar-expand-sm sticky-top w-100" style="background-color:black">
     <div class="container-fluid">
       <div class="some">
           <a href="#"  class="navbar-brand d-none d-xl-none"><i class="fas fa-user-circle fa-lg"></i>
             Enterise Resource Planning</a>
+            <%if (admin!=null){ %>
+  <div class="justify-content-center text-white d-none d-sm-block">Hi, <%=admin %> welcome to dashboard</div><%} %>
+  <%if (customer!=null){ %>
+  <div class="justify-content-center text-white">Hi, <%=admin %> welcome to dashboard</div><%} %>
           <a href="#"  class="navbar-brand d-sm-none">ERP Solution</a>
       </div>
       
@@ -52,21 +59,24 @@ html, body {
         <div class="navbar-nav"  style="letter-spacing:1px;font-family:'Montserrat',sans-serif;font-size: 13px;">
           <li><a class="nav-item nav-link text-white" href="#education">Dashboard</a></li>
           <li><a class="nav-item nav-link text-white" href="#contact">Contact</a></li>
-                    <li><a class="nav-item nav-link text-white" href='#'>Logout</a></li>
+           <li><a class="nav-item nav-link text-white" href="CommonLoginServlet?action=logout">Logout</a></li>
           
         </div>
       </div>
     </div>
   </nav> 
+  
  <div class="container-fluid" style="background-color:#F9E79F;height:100%">
  <div class="row align-items-center" style="height:100vh;background-color:#F9E79F;font-family:'Raleway', sans-serif;">
  <div class="col h-100">
  <div class="row h-100">
  <div class="col h-100">
  
- <div class="h-100 row justify-content-center" style="overflow-x: hidden;">
- <div class="col-10 offset-0 offset-xl-0 mt-4 mb-2 my-md-auto my-xl-auto col-md-6 text-dark col-xl-3 ">
-  <div class="card shadow-lg border-0 col jutify-content-center shadow border-0 " style="background-color:#FBFCFC; border-radius:15px;">
+ <div class="h-75 row justify-content-center" style="overflow-x: hidden;">
+  <%if(admin!=null){ %>
+ 
+ <div class="col-10 align-self-center offset-0 offset-xl-0 mt-4 mb-2 col-md-6 text-dark col-xl-3 ">
+  <div class="card shadow-lg border-0 col justify-content-center shadow border-0 " style="background-color:#FBFCFC; border-radius:15px;">
   <div class="card-body text-center">
 	<i class="fas fa-users-cog fa-5x m-3"></i>
     <h5 class="card-title h6">Human Resources</h5>
@@ -79,8 +89,9 @@ html, body {
   </div>
   </div>
   </div>
-  <div class="col-10 offset-0 offset-xl-0 my-2 my-md-auto my-xl-auto  border-0 col-md-6 col-xl-3 ">
-  <div class="card shadow-lg border-0 col shadow jutify-content-center" style="background-color:#FBFCFC;border-radius:15px;">
+  <%} %>
+  <div class="col-10 align-self-center  offset-0 offset-xl-0  border-0 col-md-6 col-xl-3 ">
+  <div class="card  shadow-lg border-0 col " style="background-color:#FBFCFC;border-radius:15px;">
   <div class="card-body text-center">
 	<i class="fas fa-dolly-flatbed  fa-5x text-dark m-3"></i>
     <h5 class="card-title h6">Inventory</h5>
@@ -93,15 +104,15 @@ html, body {
   </div>
   </div>
   </div>
-  <div class="col-10 offset-0 offset-xl-0  my-2 my-md-auto my-xl-auto  border-0 col-md-6 col-xl-3 ">
-  <div class="card col border-0 shadow-lg jutify-content-center" style="background-color:#FBFCFC;border-radius:15px;">
-  <div class="card-body text-center">
+  <div class="col-10 align-self-center offset-0 offset-xl-0  border-0 col-md-6 col-xl-3 ">
+  <div class="card col border-0 shadow-lg align-self-center" style="background-color:#FBFCFC;border-radius:15px;">
+  <div class="card-body  text-center">
 	<i class="fas fa-chart-pie fa-5x m-3"></i>
     <h5 class="card-title h6">Sales</h5>
     <h6 class="card-subtitle h6 mb-2 text-muted">Revenue | Profit | Loss</h6>
     <div class="row justify-content-center">
     <div class="col-xl-12 row justify-content-center">
-    <div class="col-12  offset-sm-0 offset-xl-0 col-xl-12  mt-2 p-0"><a href="CommonEmployeeServlet" style="font-size:15px" class="btn btn-secondary">Manage Finance</a></div>
+    <div class="col-12  offset-sm-0 offset-xl-0 col-xl-12  mt-2 p-0"><a href="CommonSalesServlet" style="font-size:15px" class="btn btn-secondary">Manage Finance</a></div>
     </div>
     </div>
   </div>

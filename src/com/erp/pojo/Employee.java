@@ -5,13 +5,7 @@ import java.util.Date;
 public class Employee {
 
 
-	@Override
-	public String toString() {
-		return "Employee [Eeid=" + Eeid + ", efname=" + efname + ", elname=" + elname + ", Dob=" + Dob
-				+ ", eDepartment=" + eDepartment + ", eJobPositon=" + eJobPositon + ", eJobTitle=" + eJobTitle
-				+ ", eReportingOfficer=" + eReportingOfficer + ", eWorkingHours=" + eWorkingHours + ", ecustaddress="
-				+ ecustaddress + ", ecustcontact=" + ecustcontact + ", eemail=" + eemail + "]";
-	}
+	
 	public String getEeid() {
 		return Eeid;
 	}
@@ -48,12 +42,7 @@ public class Employee {
 	public void seteJobPositon(String eJobPositon) {
 		this.eJobPositon = eJobPositon;
 	}
-	public String geteJobTitle() {
-		return eJobTitle;
-	}
-	public void seteJobTitle(String eJobTitle) {
-		this.eJobTitle = eJobTitle;
-	}
+
 	public String geteReportingOfficer() {
 		return eReportingOfficer;
 	}
@@ -85,15 +74,36 @@ public class Employee {
 		this.eemail = eemail;
 	}
 	private String Eeid;
+	@Override
+	public String toString() {
+		return "Employee [Eeid=" + Eeid + ", efname=" + efname + ", elname=" + elname + ", Dob=" + Dob
+				+ ", eDepartment=" + eDepartment + ", eJobPositon=" + eJobPositon + ", eJobTitle=" + 
+				" eReportingOfficer=" + eReportingOfficer + ", eWorkingHours=" + eWorkingHours + ", ecustaddress="
+				+ ecustaddress + ", ecustcontact=" + ecustcontact + ", eemail=" + eemail + ", username=" + username
+				+ ", password=" + password + "]";
+	}
 	private String efname;
 	private String elname;
 	private String Dob;
 	private String eDepartment;
 	private String eJobPositon;
-	private String eJobTitle;
 	private String eReportingOfficer;
 	private Integer eWorkingHours;
 	private String ecustaddress;
 	private long ecustcontact;
 	private String eemail;
+	private String username;
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	private String password;
 }

@@ -16,8 +16,8 @@ public class employeedaoimpl implements employeedao{
 	@Override		
 	public boolean addEmployee(Employee e) {
 			con=DBUtility.getConnection();
-			sql="insert into Employee(eid,efname,elname,Dob,eDepartment,eJobPosition,eJobTitle,eReportingOfficer,eWorkingHours,"
-					+ "ecustaddress,ecustcontact,eemail)values(?,?,?,?,?,?,?,?,?,?,?,?);";
+			sql="insert into Employee(eid,efname,elname,Dob,eDepartment,eJobPosition,eReportingOfficer,eWorkingHours,"
+					+ "ecustaddress,ecustcontact,eemail,username,password)values(?,?,?,?,?,?,?,?,?,?,?,?,?);";
 			PreparedStatement ptmt;
 			try {
 				ptmt = con.prepareStatement(sql);
@@ -25,15 +25,17 @@ public class employeedaoimpl implements employeedao{
 				ptmt.setString(1,e.getEeid());
 				ptmt.setString(2, e.getEfname());
 				ptmt.setString(3, e.getElname());
+				
 				ptmt.setString(4, e.getDob());
 				ptmt.setString(5, e.geteDepartment());
 				ptmt.setString(6, e.geteJobPositon());
-				ptmt.setString(7, e.geteJobTitle());
-				ptmt.setString(8, e.geteReportingOfficer());
-				ptmt.setLong(9, e.geteWorkingHours());
-				ptmt.setString(10, e.getEcustaddress());
-				ptmt.setLong(11, e.getEcustcontact());
-				ptmt.setString(12, e.getEemail());
+				ptmt.setString(7, e.geteReportingOfficer());
+				ptmt.setLong(8, e.geteWorkingHours());
+				ptmt.setString(9, e.getEcustaddress());
+				ptmt.setLong(10, e.getEcustcontact());
+				ptmt.setString(11, e.getEemail());
+				ptmt.setString(12, e.getUsername());
+				ptmt.setString(13, e.getPassword());
 				int i=ptmt.executeUpdate();
 				System.out.println(i);
 				if(i>0)

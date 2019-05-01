@@ -106,10 +106,11 @@ public class CommonEmployeeServlet extends HttpServlet {
 			String eid=request.getParameter("EmployeeID");
 			String efname=request.getParameter("Efname");
 			String elname=request.getParameter("Elname");
+			String eusername=request.getParameter("eusername");
+			String epassword=request.getParameter("epassword");
 			String edob=request.getParameter("Edob");
 			String edepartment=request.getParameter("Edepartment");
 			String ejobposition=request.getParameter("EJobPosition");
-			String ejobtitle=request.getParameter("EJobTitle");
 			String ereportingofficer=request.getParameter("EReportingOfficer");
 			Integer eWorkingHours=Integer.parseInt(request.getParameter("EWorkingHours"));
 			String eaddress=request.getParameter("EmployeeAddress");
@@ -121,7 +122,8 @@ public class CommonEmployeeServlet extends HttpServlet {
 			e.setDob(edob);
 			e.seteDepartment(edepartment);
 			e.seteJobPositon(ejobposition);
-			e.seteJobTitle(ejobtitle);
+			e.setUsername(eusername);
+			e.setPassword(epassword);
 			e.seteReportingOfficer(ereportingofficer);
 			e.seteWorkingHours(eWorkingHours);
 			e.setEcustaddress(eaddress);

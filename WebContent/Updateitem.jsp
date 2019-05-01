@@ -44,8 +44,7 @@ function myFunction() {
       <div class="collapse  navbar-collapse  justify-content-end justify-content-xl-end" id="myTogglerNav">
         <div class="navbar-nav"  style="letter-spacing:1px;font-family:'Montserrat',sans-serif;font-size: 13px;">
           <li><a class="nav-item nav-link text-white" href='Dashboard.jsp'>Dashboard</a></li>
-          <li><a class="nav-item nav-link text-white" href='#skills'>Logout</a></li>
-          <li><a class="nav-item nav-link text-white" href="#contact">Contact</a></li>
+           <li><a class="nav-item nav-link text-white" href="CommonLoginServlet?action=logout">Logout</a></li>
         </div>
       </div>
     </div>

@@ -160,14 +160,10 @@ function myFunction() {
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse  navbar-collapse  justify-content-center justify-content-xl-center" id="myTogglerNav">
-        <div class="navbar-nav"  style="letter-spacing:1px;font-family:'Montserrat',sans-serif;font-size: 13px;">
-          <li><a class="nav-item nav-link text-white" href='#'>Login</a></li>
-          <li><a class="nav-item nav-link text-white" href='#skills'>Login</a></li>
-          <li><a class="nav-item nav-link text-white" href="#education">Dashboard</a></li>
-          <li><a class="nav-item nav-link text-white" href="#Achievements"></a></li>
-          <li><a class="nav-item nav-link text-white" href="#projects">Projects</a></li>
-          <li><a class="nav-item nav-link text-white" href="#contact">Contact</a></li>
+      <div class="collapse justify-content-end  navbar-collapse" id="myTogglerNav">
+        <div class="navbar-nav justify-content-end"  style="letter-spacing:1px;font-family:'Montserrat',sans-serif;font-size: 13px;">
+          <li><a class="nav-item nav-link text-white" href='Login.jsp'>Login</a></li>
+         
         </div>
       </div>
     </div>

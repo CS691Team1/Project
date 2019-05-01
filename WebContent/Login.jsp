@@ -46,6 +46,12 @@ overflow-x: hidden;
   <div class="form-group row justify-content-center mt-3" >
   <i class="fas fa-user-circle fa-5x"></i>
 </div>
+<select name="type" class="form-control justify-content-center">
+
+  <option value="admin">Admin</option>
+  <option value="employee">Employee</option>
+	
+</select>
 <div>
     <label for="Custusername" class="text-secondary">User Name</label>
     <input type="input" style="border-radius:12px;" class="form-control shadow border-0" id="Custusername" name="Custusername"  placeholder="Enter Username">

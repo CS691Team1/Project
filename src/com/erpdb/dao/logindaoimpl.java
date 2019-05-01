@@ -17,7 +17,7 @@ public class logindaoimpl implements logindao {
 
 		// TODO Auto-generated method stub
 		Connection con=DBUtility.getConnection();
-		sql="select adminusername,adminpassword from Adminn where adminusername=? and adminpassword=?";
+		sql="select custusername,custpassword from customer where custusername=? and custpassword=?";
 		try {
 			PreparedStatement ptmt=con.prepareStatement(sql);
 			ptmt.setString(1,adminname);
@@ -25,7 +25,7 @@ public class logindaoimpl implements logindao {
 			rs=ptmt.executeQuery();
 			while(rs.next())
 			{
-				if(adminname.equals(rs.getString("adminusername"))&&adminpassword.equals(rs.getString("adminpassword")))
+				if(adminname.equals(rs.getString("custusername"))&&adminpassword.equals(rs.getString("custpassword")))
 						{
 					return true;
 						}
@@ -51,7 +51,8 @@ public class logindaoimpl implements logindao {
 	public boolean userlogin(String username, String userpassword) {
 		System.out.println("entered");
 		Connection con=DBUtility.getConnection();
-		sql="select custusername,custpassword from customer where custusername=? and custpassword=?";
+		System.out.println(userpassword+username);
+		sql="select username,password from employee where username=? and password=?";
 		try {
 			PreparedStatement ptmt=con.prepareStatement(sql);
 			ptmt.setString(1,username);
@@ -60,7 +61,7 @@ public class logindaoimpl implements logindao {
 			rs=ptmt.executeQuery();
 			while(rs.next())
 			{
-				if(username.equals(rs.getString("Custusername"))&&userpassword.equals(rs.getString("Custpassword")))
+				if(username.equals(rs.getString("username"))&&userpassword.equals(rs.getString("password")))
 					System.out.println("test");	
 					return true;
 						
