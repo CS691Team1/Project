@@ -48,7 +48,7 @@ public class CommonSalesServlet extends HttpServlet {
 		Inventorydaoimple inl=new Inventorydaoimple();
 		SalesdaoImpl idl =new SalesdaoImpl();
 		List<Inventoryitem> productlist;
-		if(admin!=null) {
+		if(employee!=null) {
 			Inventorydaoimple idi = new Inventorydaoimple();
 			System.out.println("inside sales module");
 			
@@ -66,7 +66,8 @@ public class CommonSalesServlet extends HttpServlet {
 					e.printStackTrace();
 				}
 		}
-		if(employee!=null) {
+		if(admin!=null) {
+		System.out.println("employee tero toh lkklklklklkl");
 			try {
 				List<SalesReport> itemlist;
 

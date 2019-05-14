@@ -43,7 +43,7 @@ System.out.println(admin+" "+customer+" "+type);%>
   </nav>
 <div class="row container-fluid">
 <div class="col">
-<div class="row p-5">
+<div class="p-4 m-auto">
 
 <div class="col-10 offset-1 row">
 
@@ -168,13 +168,13 @@ System.out.println(request.getAttributeNames());%>
 	<%}%>
 </table>
 </div>
-<div class="d-block d-sm-none">
+<div class="d-block row d-sm-none ">
 <% for(int i=0;i<custlist.size();i++)
 	{
 	System.out.println(custlist.size());
 	Employee cust1=custlist.get(i);
 	%>
-<div class="card  mt-3 shadow" style="line-height:25px;width: 20rem;border-radius:15px">
+<div class="card   mt-3 shadow" style="line-height:25px;width: 100%;border-radius:15px">
   <div class="card-body">
     <h6 class="card-title d-inline">Employee ID:</h6>
     <h6 class="card-subtitle mb-2 text-muted d-inline"><%=cust1.getEeid()%></h6><br/>

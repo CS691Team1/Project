@@ -58,7 +58,6 @@ System.out.println(admin+" "+customer+" "+type);%>
       <div class="collapse  navbar-collapse  justify-content-end justify-content-xl-end" id="myTogglerNav">
         <div class="navbar-nav"  style="letter-spacing:1px;font-family:'Montserrat',sans-serif;font-size: 13px;">
           <li><a class="nav-item nav-link text-white" href="#education">Dashboard</a></li>
-          <li><a class="nav-item nav-link text-white" href="#contact">Contact</a></li>
            <li><a class="nav-item nav-link text-white" href="CommonLoginServlet?action=logout">Logout</a></li>
           
         </div>
@@ -68,22 +67,22 @@ System.out.println(admin+" "+customer+" "+type);%>
   
  <div class="container-fluid" style="background-color:#F9E79F;height:100%">
  <div class="row align-items-center" style="height:100vh;background-color:#F9E79F;font-family:'Raleway', sans-serif;">
- <div class="col h-100">
- <div class="row h-100">
+ <div class="col h-100 ">
+ <div class="row h-100 ">
  <div class="col h-100">
  
- <div class="h-75 row justify-content-center" style="overflow-x: hidden;">
+ <div class="h-100  row  justify-content-center" style="overflow-x: hidden;">
   <%if(admin!=null){ %>
  
- <div class="col-10 align-self-center offset-0 offset-xl-0 mt-4 mb-2 col-md-6 text-dark col-xl-3 ">
-  <div class="card shadow-lg border-0 col justify-content-center shadow border-0 " style="background-color:#FBFCFC; border-radius:15px;">
+ <div class=" col-10 align-self-center offset-0 offset-xl-0  col-md-6 text-dark col-xl-3 ">
+  <div class="card shadow-lg border-0 col  shadow border-0 " style="background-color:#FBFCFC; border-radius:15px;">
   <div class="card-body text-center">
 	<i class="fas fa-users-cog fa-5x m-3"></i>
-    <h5 class="card-title h6">Human Resources</h5>
+    <h5 class="card-title h6">Human Resodurces</h5>
     <h6 class="card-subtitle h6 mb-2 text-muted">Employee's Information</h6>
     <div class="row justify-content-center">
     <div class="col-xl-12 row justify-content-center">
-    <div class="col-12  offset-sm-0 offset-xl-0 col-xl-12  mt-2 p-0"><a href="CommonEmployeeServlet"  class="btn btn-secondary">Manadge Employees</a></div>
+    <div class="col-12  offset-sm-0 offset-xl-0 col-xl-12  mt-2 p-0"><a href="CommonEmployeeServlet"  class="btn btn-secondary">Manage Employees</a></div>
     </div>
     </div>
   </div>
@@ -104,7 +103,7 @@ System.out.println(admin+" "+customer+" "+type);%>
   </div>
   </div>
   </div>
-  <div class="col-10 align-self-center offset-0 offset-xl-0  border-0 col-md-6 col-xl-3 ">
+  <div class="col-10 align-self-center offset-0 offset-xl-0   border-0 col-md-6 col-xl-3 ">
   <div class="card col border-0 shadow-lg align-self-center" style="background-color:#FBFCFC;border-radius:15px;">
   <div class="card-body  text-center">
 	<i class="fas fa-chart-pie fa-5x m-3"></i>
